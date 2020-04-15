@@ -1,0 +1,137 @@
+<section class="content-header">
+            <h1 class="box-title">Input Data
+                <small>Masukkan Data Anggota Yang akan di Post</small>
+            </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box box-info">
+            <div class="box-header">
+            <!-- /.box-header -->
+              <div class="box-body pad">
+                <div class="container">
+            
+                  <form action="/anggota/tambah" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
+             {{ csrf_field() }}
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Nama Lengkap</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" id="namaBarang" name="nama_anggota" required>
+                        </div>
+                    </div>
+        
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Alamat</label>
+                        <div class="col-md-9">
+                            <textarea style="resize:none" class="form-control" id="jenis" name="alamat" required></textarea>
+                        </div>
+                    </div>               
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Jenis Kelamin</label>
+                        <div class="col-md-4">
+                            <select name="jenis_kelamin" class="form-control" id="InputKel">
+                                <option>Pria</option>
+                                <option>Wanita</option>
+                            </select>
+                        </div>
+                    </div>
+
+                      <div class="form-group">
+                        <label class="col-md-3 control-label">Agama</label>
+                        <div class="col-md-4">
+                        <select name="agama" class="form-control">
+                            <option>Islam</option>
+                            <option>Kristen Katolik</option>
+                            <option>Kristen Protestan</option>
+                            <option>Hindu</option>
+                            <option>Budha</option>
+                            <option>Kong Hu Cu</option>
+                        </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="col-md-3 control-label">No. Telp</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="stok" name="no_hp" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Angkatan</label>
+                            <div class="col-md-4">
+                                <select name="angkatan" class="form-control" id="InputAngkatan">
+                                    <option>2000</option>
+                                    <option>2001</option>
+                                    <option>2002</option>
+                                    <option>2003</option>
+                                    <option>2004</option>
+                                    <option>2005</option>
+                                    <option>2006</option>
+                                    <option>2007</option>
+                                    <option>2008</option>
+                                    <option>2009</option>
+                                    <option>2010</option>
+                                    <option>2011</option>
+                                    <option>2012</option>
+                                    <option>2013</option>
+                                    <option>2014</option>
+                                    <option>2015</option>
+                                    <option>2016</option>
+                                    <option>2017</option>
+                                    <option>2018</option>
+                                    <option>2019</option>
+                                </select>
+                            </div>
+                  </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Status</label>
+                        <div class="col-md-4">
+                            <select name="status" class="form-control" id="InputStat">
+                                <option>Aktif</option>
+                                <option>Alumni</option>
+                            </select>
+                        </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="foto" class="col-md-3 control-label">Foto Anggota</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                        <div class="custom-file">
+                            <img width="200" height="200" />
+                            <input name="cover" type="file" id="foto_anggota">
+                            <label class="custom-file-label" for="foto">Pilih File</label>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="kta" class="col-md-3 control-label">Scan KTA</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input name="foto_kta" type="file" class="custom-file-input" id="InputKta">
+                                <label class="custom-file-label" for="kta">Pilih File</label>
+                            </div>
+                            </div>
+                        </div>
+                  </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-custom btn-default waves-effect" data-dismiss="modal">Tutup</button>
+                <button type="submit" class="btn btn-custom btn-primary waves-effect waves-light">Simpan</button>
+            </div>
+            </form>
+</div>
+</div>
