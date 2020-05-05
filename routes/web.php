@@ -18,20 +18,19 @@ Route::get('/registerBaru', 'PenggunaController@regBaru');
 Route::post('/registerBaru/tambah', 'PenggunaController@tambah');
 Route::get('/beranda', 'PenggunaController@beranda');
 Route::get('/anggota', 'PenggunaController@data');
-Route::get('/anggota/cari', 'PenggunaController@search');
-Route::get('/data-anggota', 'PenggunaController@dataAnggota');
-Route::get('/anggota/info/{id_anggota}', 'PenggunaController@info');
+Route::get('/anggota/cari', 'PenggunaController@cari_anggota');
+Route::get('/anggota/info/{id_anggota}', 'PenggunaController@info_anggota');
 
 // Route::post('/anggota/tambah', 'PenggunaController@tambah');
 Route::get('/pengurus', 'PenggunaController@dataPengurus');
-Route::get('/pengurus/info/{id_anggota}', 'PenggunaController@infoP');
+Route::get('/pengurus/info/{id_anggota}', 'PenggunaController@info_pengurus');
 Route::get('/kegiatan', 'PenggunaController@kegiatan');
 Route::get('/prestasi', 'PenggunaController@prestasi');
 Route::get('/tentang', 'PenggunaController@tentang');
 Route::get('/bantuan', 'PenggunaController@bantuan');
 
 Route::get('/alumni', 'PenggunaController@alumni');
-Route::get('/alumni/cari', 'PenggunaController@cari');
+Route::get('/alumni/cari', 'PenggunaController@cari_alumni');
 // Route::get('/alumni/data', 'PenggunaController@tabel');
 
 

@@ -24,20 +24,20 @@ class PenggunaController extends Controller
     
     public function data(){
         $data_anggota = Anggota::where('status' ,'=', 'Aktif')->orderBy('nama_anggota', 'asc')->paginate(10);
-        return view ("user.dataAnggota", compact('data_anggota'));
+        return view ("user.anggota", compact('data_anggota'));
+    }
+    
+    public function info_anggota($id_anggota) 
+    {
+        $data_anggota = Anggota::find($id_anggota);
+        return view('user/infoAnggota', ['data_anggota' => $data_anggota]);
     }
 
-
-
-    public function dataAnggota() 
+    public function cari_anggota(Request $request)
     {
-        $article = Anggota::where('status' ,'=', 'Aktif')->select(['id_anggota','nama_anggota', 'alamat', 'angkatan']);
-        
-        return Datatables::of($article)
-        ->addColumn('action', function ($article) {
-            return ' <a href="/anggota/info/'. $article -> id_anggota .'" class="on-default edit-row btn btn-block btn-custom btn-info">Info</a>';
-        })
-        ->make(true);
+        $cari = $request->get('cari');
+        $data_anggota = Anggota::where('status' ,'=','Aktif')->where('nama_anggota','like','%'.$cari.'%')->paginate(5);
+        return view('user.anggota',['data_anggota' => $data_anggota]);
     }
 
     public function regBaru(){
@@ -125,26 +125,13 @@ class PenggunaController extends Controller
         return view ('user/tentang', ['data_tentang' => $data_tentang]);
     }
 
-    public function info($id_anggota) 
-    {
-        $data_anggota = Anggota::find($id_anggota);
-        return view('user/infoAnggota', ['data_anggota' => $data_anggota]);
-    }
-
-    public function infoP($id_anggota) 
+    public function info_pengurus($id_anggota) 
     {
         $data_anggota = Anggota::find($id_anggota);
         return view('user/infoPengurus', ['data_anggota' => $data_anggota]);
     }
 
-    public function search(Request $request)
-    {
-        $cari = $request->get('cari');
-        $data_anggota = Anggota::where('status' ,'=','Aktif')->where('nama_anggota','like','%'.$cari.'%')->paginate(5);
-        return view('user.dataAnggota',['data_anggota' => $data_anggota]);
-    }
-
-    public function cari(Request $request)
+    public function cari_alumni(Request $request)
     {
         $cari = $request->get('cari');
         $data_anggota = Anggota::where('status' ,'=','Alumni')->where('nama_anggota','like','%'.$cari.'%')->paginate(5);

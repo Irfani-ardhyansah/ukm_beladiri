@@ -38,7 +38,7 @@
       <ul class="sidebar-menu" data-widget="tree">
 
       <li><a href="/admin"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
-      <li class="treeview active">
+      <li class="treeview">
           <a href="#">
             <i class="fa fa-table"></i> <span>Master Data</span>
             <span class="pull-right-container">
