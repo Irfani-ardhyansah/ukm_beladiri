@@ -20,17 +20,6 @@ class PengurusController extends Controller
         return view('layouts.pengurus.pengurus', ['data_anggota' => $data_anggota]);
     }
 
-    // public function tambah(Request $request) 
-    // {
-    //     // $this->validate($request,[
-    //     //     'nama' => 'required',
-    //     //     'alamat' => 'required'
-    //     // ]);
-
-    //     Pengurus::create($request->all());
-
-    //     return redirect('/admin/pengurus')->with('sukses', 'Data Berhasil Diinput!');
-    // } 
 
     public function info($id_anggota) 
     {

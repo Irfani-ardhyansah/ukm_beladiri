@@ -147,24 +147,5 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<!-- <script type="text/javascript">
-    $(function() {
-        var oTable = $('#table-anggota').DataTable({
-            processing: true,
-            serverSide: true,
-            ajax: {
-                url: '{{ url("data-anggota") }}'
-            },
-            columns: [
-                {data: 'nama_anggota', name:'nama_anggota'},
-                {data: 'alamat', name:'alamat'},
-                {data: 'angkatan', name:'angkatan'},
-                {data: 'status', name:'status', orderable: false, searchable:false},
-            ],
-        });
-    });
-</script> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 @endsection

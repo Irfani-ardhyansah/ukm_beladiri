@@ -30,17 +30,20 @@
               <ul class="list-group list-group-unbordered ">
               
                 <li class="list-group-item">
-                 <b>Alamat</b> <a class="pull-right">{{ $data_anggota -> alamat }}</a>
+                 <b>Alamat</b> <div class="pull-right">{{ $data_anggota -> alamat }}</div>
                 </li>
 
                 <li class="list-group-item">
-                  <b>No Telp</b> <a class="pull-right">{{ $data_anggota -> no_hp }}</a>
+                  <b>No Telp</b> <div class="pull-right">{{ $data_anggota -> no_hp }}</div>
                 </li>
                 <li class="list-group-item">
-                  <b>Agama</b> <a class="pull-right">{{$data_anggota -> agama}}</a>
+                  <b>Agama</b> <div class="pull-right">{{$data_anggota -> agama}}</div>
                 </li>
                 <li class="list-group-item">
-                  <b>Scan Kta</b> <a class="pull-right" href="{{url('/data_scan/'.$data_anggota->kta)}}">{{$data_anggota -> kta}}</a>
+                  <b>Scan Kta</b> <a class="pull-right" href="{{url('/data_kta/'.$data_anggota->kta)}}">{{$data_anggota -> kta}}</a>
+                </li>
+                <li class="list-group-item">
+                  <b>File Foto</b> <a class="pull-right" href="{{url('/data_file/'.$data_anggota->file)}}">{{$data_anggota -> file}}</a>
                 </li>
               </ul>
               </div>

@@ -23,7 +23,7 @@ class PenggunaController extends Controller
     }
     
     public function data(){
-        $data_anggota = Anggota::where('status' ,'=', 'Aktif')->orderBy('nama_anggota', 'asc')->paginate(10);
+        $data_anggota = Anggota::where('status' ,'=', 'Aktif')->orderBy('angkatan', 'asc')->paginate(10);
         return view ("user.anggota", compact('data_anggota'));
     }
     

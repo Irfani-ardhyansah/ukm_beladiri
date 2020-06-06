@@ -37,9 +37,6 @@
 
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Tambah Data <b>Anggota</b></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
       </div>
 
       <div class="modal-body">
@@ -47,57 +44,57 @@
       <form action="/admin/akun/tambah" method="POST" enctype="multipart/form-data">
       {{ csrf_field() }}
 
-      <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-          <label for="name" class="col-md-4 control-label">Name</label>
-          <div class="col-md-6">
+      <div class="col-xs-6">
+        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+            <label for="name" class="col-md-4 control-label">Name</label>
               <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required>
               @if ($errors->has('name'))
                   <span class="help-block">
                       <strong>{{ $errors->first('name') }}</strong>
                   </span>
               @endif
-          </div>
+        </div>
       </div>
 
-      <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-          <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-          <div class="col-md-6">
-              <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-              @if ($errors->has('email'))
-                  <span class="help-block">
-                      <strong>{{ $errors->first('email') }}</strong>
-                  </span>
-              @endif
-          </div>
+      <div class="col-xs-6">
+        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+            <label for="email" class="col-md-4 control-label">E-Mail</label>
+            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+            @if ($errors->has('email'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('email') }}</strong>
+                </span>
+            @endif
+        </div>
       </div>
 
-      <div class="form-group{{ $errors->has('level') ? ' has-error' : '' }}">
-          <label for="level" class="col-md-4 control-label">Level</label>
-          <div class="col-md-6">
-          <select class="form-control" name="level" required="">
-              <option value="admin">Admin</option>
-          </select>
-          </div>
+      <div class="col-xs-6">
+        <div class="form-group{{ $errors->has('level') ? ' has-error' : '' }}">
+            <label for="level" class="col-md-4 control-label">Level</label>
+            <select class="form-control" name="level" required="">
+                <option value="admin">Admin</option>
+            </select>
+        </div>
       </div>
 
-      <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-          <label for="password" class="col-md-4 control-label">Password</label>
-          <div class="col-md-6">
-              <input id="password" type="password" class="form-control" onkeyup='check();' name="password" required>
-              @if ($errors->has('password'))
-                  <span class="help-block">
-                      <strong>{{ $errors->first('password') }}</strong>
-                  </span>
-              @endif
-          </div>
+      <div class="col-xs-6">
+        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+            <label for="password" class="col-md-4 control-label">Password</label>
+            <input id="password" type="password" class="form-control" onkeyup='check();' name="password" required>
+            @if ($errors->has('password'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('password') }}</strong>
+                </span>
+            @endif
+        </div>
       </div>
-                  
-      <div class="form-group">
-          <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-          <div class="col-md-6">
-              <input id="confirm_password" type="password" onkeyup="check()" class="form-control" name="password_confirmation" required>
-              <span id='message'></span>
-          </div>
+      
+      <div class="col-xs-6">
+        <div class="form-group">
+            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+            <input id="confirm_password" type="password" onkeyup="check()" class="form-control" name="password_confirmation" required>
+            <span id='message'></span>
+        </div>
       </div>
 
       </div>
@@ -125,6 +122,7 @@
                   <th>Nama</th>
                   <th>Email</th>
                   <th>Created At</th>
+                  <th>Updated At</th>
                   <th>Opsi</th>
                 </tr>
                 </thead>
@@ -135,6 +133,7 @@
                   <td>{{ $data -> name }}</td>
                   <td>{{ $data -> email }}</td>
                   <td>{{ $data -> created_at }}</td>
+                  <td>{{ $data -> updated_at }}</td>
                   <td>
                   @if($data -> level == 'superadmin')
                     <b><i>Super Admin</i></b>

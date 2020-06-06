@@ -119,6 +119,7 @@ $('.date').datepicker({
                 url: '{{ url("admin/data-anggota") }}'
             },
             columns: [
+                { data: 'DT_RowIndex', orderable: false, searchable:false },
                 {data: 'nama_anggota', name:'nama_anggota'},
                 {data: 'alamat', name:'alamat'},
                 {data: 'angkatan', name:'angkatan'},
@@ -139,6 +140,7 @@ $(function() {
                 url: '{{ url("admin/data-alumni") }}'
             },
             columns: [
+                { data: 'DT_RowIndex', orderable: false, searchable:false },
                 {data: 'nama_anggota', name:'nama_anggota'},
                 {data: 'alamat', name:'alamat'},
                 {data: 'angkatan', name:'angkatan'},

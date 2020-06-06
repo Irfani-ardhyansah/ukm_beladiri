@@ -62,53 +62,55 @@ var check = function() {
       {{ csrf_field() }}
       {{ method_field('PUT') }}
 
-      <div class="form-group">
-            <label>Nama</label>
-                <div class="input-group col-xs-4">
-                    <input id="name" type="text" class="form-control" name="name" value="{{ $data->name }}" required autofocus>
-                        @if ($errors->has('name'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('name') }}</strong>
-                            </span>
-                        @endif
-                </div>
-        </div>
-
+      <div class="col-xs-5">
         <div class="form-group">
-          <label for="nama">Nama</label>
-            <div class="input-group col-xs-4">
-            <input id="email" type="email" class="form-control" name="email" value="{{ $data->email }}" required >
-                @if ($errors->has('email'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('email') }}</strong>
-                    </span>
-                @endif
-            </div>
-        </div>
-
-        <div class="form-group">
-          <label for="alamat">Password</label>
-            <div class="input-group col-xs-4">
-            <input id="password" type="password" class="form-control" onkeyup='check();' name="password">
-                @if ($errors->has('password'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('password') }}</strong>
-                    </span>
-                @endif
-            </div>
-        </div>
-
-        <div class="form-group">
-          <label>Confirm Password</label>
-            <div class="input-group col-xs-4">
-                <input id="confirm_password" type="password" onkeyup="check()" class="form-control" name="password_confirmation">   
-            </div>
+          <label>Nama</label>
+            <input id="name" type="text" class="form-control" name="name" value="{{ $data->name }}" required autofocus>
+              @if ($errors->has('name'))
+                  <span class="help-block">
+                      <strong>{{ $errors->first('name') }}</strong>
+                  </span>
+              @endif
         </div>
       </div>
 
+      <div class="col-xs-5">
+        <div class="form-group">
+          <label for="nama">Email</label>
+            <input id="email" type="email" class="form-control" name="email" value="{{ $data->email }}" required >
+              @if ($errors->has('email'))
+                  <span class="help-block">
+                      <strong>{{ $errors->first('email') }}</strong>
+                  </span>
+              @endif
+        </div>
+      </div>
+
+      <div class="col-xs-5">
+        <div class="form-group">
+          <label for="alamat">Password</label>
+            <input id="password" type="password" class="form-control" onkeyup='check();' name="password">
+            @if ($errors->has('password'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('password') }}</strong>
+                </span>
+            @endif
+        </div>
+      </div>
+
+      <div class="col-xs-5">
+        <div class="form-group">
+          <label>Confirm Password</label>
+            <input id="confirm_password" type="password" onkeyup="check()" class="form-control" name="password_confirmation">   
+        </div>
+      </div>
+    </div>
+
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="submit" class="btn btn-primary">Update Data</button>
+        <div class="col-xs-10">
+          <a href="{{url('/admin/akun')}}" class="btn btn-secondary" data-dismiss="modal">Cancel</a>
+          <button type="submit" class="btn btn-primary">Update Data</button>
+        </div>
       </div>
       </form>
               <!-- /.box-body -->

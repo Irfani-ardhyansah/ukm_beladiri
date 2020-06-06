@@ -1,5 +1,3 @@
-
-
 @extends('layouts.app')
 
 @section('content')
@@ -22,103 +20,11 @@
     </div>
     @endif
 
-    <!-- Main content -->
-    <section class="content ml-2">
-          <div class="box float-left">
-            <!-- /.box-header -->
-            <div class="box-body">
-            
-            <!-- tambah form -->
-            <!-- <div class="pull-right">
-            <button type="button" class="btn btn-success float-right btn-sm" data-toggle="modal" data-target="#pengurusModal"><i class="fa fa-plus"></i></button>
-            </div> -->
-
-            
-            
-<!-- pengurus Modal -->
-<div class="modal fade" id="pengurusModal" tabindex="-1" role="dialog" aria-labelledby="anggotaModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Tambah Data <b>Pengurus</b></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-      <div class="modal-body">
-        
-      <form action="/admin/pengurus/tambah" method="POST">
-      {{ csrf_field() }}
-
-        <div class="form-group">
-          <label for="nama">Nama</label>
-          <input name="nama_pengurus" type="text" class="form-control" id="InputNama" aria-describedby="emailHelp" placeholder="Masukkan Nama">
-        </div>
-
-        <div class="form-group">
-            <label>Jabatan</label>
-            <select name="jabatan" class="form-control" id="InputAgama">
-              <option>Ketua</option>
-              <option>Wakil</option>
-              <option>Sekertaris I</option>
-              <option>Sekertaris II</option>
-              <option>Bendahara I</option>
-              <option>Bendahara II</option>
-            </select>
-          </div>
-
-                  <div class="form-group">
-                    <label>Angkatan</label>
-                    <select name="angkatan" class="form-control" id="InputAngkatan">
-                      <option>2000</option>
-                      <option>2001</option>
-                      <option>2002</option>
-                      <option>2003</option>
-                      <option>2004</option>
-                      <option>2005</option>
-                      <option>2006</option>
-                      <option>2007</option>
-                      <option>2008</option>
-                      <option>2009</option>
-                      <option>2010</option>
-                      <option>2011</option>
-                      <option>2012</option>
-                      <option>2013</option>
-                      <option>2014</option>
-                      <option>2015</option>
-                      <option>2016</option>
-                      <option>2017</option>
-                      <option>2018</option>
-                      <option>2019</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="alamat">Alamat</label>
-                    <textarea style="resize:none" name="alamat" class="form-control" id="InputAlamat" placeholder="Masukkan Alamat" rows="2"></textarea>
-                  </div>
-
-                  <div class="form-group">
-                    <label>No. Telp.</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                        </div>
-                        <input name="noHP" type="text" class="form-control" id="InputTelp" data-inputmask='"mask": "(999) 999-9999"' data-mask>
-                      </div>
-                    </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="submit" class="btn btn-success">Update Data</button>
-      </div>
-      </form>
-    </div>
-  </div>
-</div>
-</div>
+<!-- Main content -->
+<section class="content ml-2">
+      <div class="box float-left">
+        <!-- /.box-header -->
+        <div class="box-body">
 <!--             
             <div class="pull-right">
             <form class="form-inline float-right" action="/anggota/cari" method="GET">

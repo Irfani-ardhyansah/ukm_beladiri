@@ -39,11 +39,10 @@ Route::get('/admin', 'AnggotaController@beranda');
 Route::get('/admin/anggota', 'AnggotaController@index');
 Route::get('/admin/anggota/export_excel', 'AnggotaController@export_excel');
 Route::get('/admin/data-anggota', 'AnggotaController@dataAnggota');
-
-// Route::get('/admin/anggota/add', 'AnggotaController@add');
 Route::post('/admin/anggota/tambah', 'AnggotaController@tambah');
-Route::get('/admin/anggota/edit/{id_anggota}', 'AnggotaController@edit');
-Route::put('/admin/anggota/update/{id_anggota}', 'AnggotaController@update');
+Route::match(['get', 'post'], '/admin/anggota/edit/{id_anggota}', 'AnggotaController@modal_update');
+// Route::get('/admin/anggota/edit/{id_anggota}', 'AnggotaController@edit');
+// Route::put('/admin/anggota/update/{id_anggota}', 'AnggotaController@update');
 Route::get('/admin/anggota/hapus/{id_anggota}', 'AnggotaController@hapus');
 Route::get('/admin/anggota/info/{id_anggota}', 'AnggotaController@info');
 Route::get('/admin/anggota/cari', 'AnggotaController@cari');
@@ -61,8 +60,9 @@ Route::get('/admin/data-alumni', 'AlumniController@dataAlumni');
 Route::post('/admin/alumni/tambah', 'AlumniController@tambah');
 Route::get('/admin/alumni/info/{id_anggota}', 'AlumniController@info');
 Route::get('/admin/alumni/hapus/{id_anggota}', 'AlumniController@hapus');
-Route::get('/admin/alumni/edit/{id_anggota}', 'AlumniController@edit');
-Route::put('/admin/alumni/update/{id_anggota}', 'AlumniController@update');
+Route::match(['get', 'post'], '/admin/alumni/edit/{id_anggota}', 'AlumniController@modal_update');
+// Route::get('/admin/alumni/edit/{id_anggota}', 'AlumniController@edit');
+// Route::put('/admin/alumni/update/{id_anggota}', 'AlumniController@update');
 
 // Routue Akun
 Route::get('/admin/akun', 'AkunController@index');

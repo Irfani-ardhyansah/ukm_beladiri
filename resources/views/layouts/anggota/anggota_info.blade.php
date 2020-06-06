@@ -40,7 +40,7 @@
                   <b>Agama</b> <a class="pull-right">{{$data_anggota -> agama}}</a>
                 </li>
                 <li class="list-group-item">
-                  <b>Scan Kta</b> <a class="pull-right" href="{{url('/data_scan/'.$data_anggota->kta)}}">{{$data_anggota -> kta}}</a>
+                  <b>Scan Kta</b> <a class="pull-right" href="{{url('/data_kta/'.$data_anggota->kta)}}">{{$data_anggota -> kta}}</a>
                 </li>
                 <li class="list-group-item">
                   <b>File Foto</b> <a class="pull-right" href="{{url('/data_file/'.$data_anggota->file)}}">{{$data_anggota -> file}}</a>
