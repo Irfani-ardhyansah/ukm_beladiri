@@ -159,65 +159,6 @@ class AlumniController extends Controller
         }
     }
 
-    // public function edit($id_anggota) 
-    // {
-    //     $data_anggota = Anggota::find($id_anggota);
-    //     return view('layouts.anggota.alumni_edit', ['data_anggota' => $data_anggota]);
-    //     return redirect('/admin/alumni');
-    // }
-
-    // public function update($id_anggota, Request $request)
-    // {
-    //     $this->validate($request, [
-    //         'nama_anggota' => 'required',
-    //         'alamat' => 'required',
-    //         'agama' => 'required',
-    //         'angkatan' => 'required',
-    //         'jenis_kelamin' => 'required',
-    //         'no_hp' => 'required',
-    //         'status' => 'required',
-    //     ]);
-        
-    //     try {
-    //         $anggota = Anggota::find($id_anggota);
-    //         $anggota->update([
-    //             'nama_anggota' => $request->nama_anggota,
-    //             'alamat' => $request->alamat,
-    //             'agama' => $request->agama,
-    //             'angkatan' => $request->angkatan,
-    //             'jenis_kelamin' => $request->jenis_kelamin,
-    //             'no_hp' => $request->no_hp,
-    //             'status' => $request->status,
-    //             'jabatan' => $request->jabatan,
-    //         ]);
-    
-    //         if($request->hasFile('file')){
-    //             $file = $request->file('file');
-    //             $dt = Carbon::now();
-    //             $acak  = $file->getClientOriginalExtension();
-    //             $fileName = $dt->format('Y-m-d').'.'.$acak;
-    //             $request->file('file')->move('data_file/', $fileName);
-    //             $anggota->file = $request->file('file')->getClientOriginalName();
-    //             $anggota->save();
-    //         }
-
-    //         if($request->hasFile('kta')){
-    //             $file = $request->file('kta');
-    //             $dt = Carbon::now();
-    //             $acak  = $file->getClientOriginalExtension();
-    //             $fileName = $dt->format('Y-m-d').'.'.$acak;
-    //             $request->file('kta')->move('data_kta/', $request->file('kta')->getClientOriginalName());
-    //             $anggota->kta = $request->file('kta')->getClientOriginalName();
-    //             $anggota->save();
-    //         }
-    
-    //         alert()->success('Berhasil','Data Berhasil DiUbah!');
-    //         return redirect('/admin/alumni');
-    //     } catch(\Exception $e) {
-    //         return redirect('/admin/alumni');
-    //     }
-    // }
-
     public function hapus($id_anggota)
     {
         $gambar = Anggota::where('id_anggota',$id_anggota)->first();
